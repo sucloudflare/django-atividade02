@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* ===== FUNDO TECH ===== */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* glow atrás do nome */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #38bdf8;
+  filter: blur(120px);
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.overlay {
+  text-align: center;
+  z-index: 1;
+}
+
+.overlay h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.overlay p {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+/* ===== SOBRE ===== */
+.sobre {
+  padding: 80px 20px;
+}
+
+.container {
+  display: flex;
+  max-width: 1100px;
+  margin: auto;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* FOTO */
+.container img {
+  width: 280px;
+  border-radius: 20px;
+  border: 2px solid rgba(56,189,248,0.4);
+  box-shadow: 0 0 30px rgba(56,189,248,0.2);
+  transition: 0.4s;
+}
+
+.container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(56,189,248,0.5);
+}
+
+/* TEXTO */
+.texto h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.texto p {
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+.texto h3 {
+  margin-top: 25px;
+  font-size: 1.2rem;
+  color: #22c55e;
+}
+
+.texto ul {
+  margin-top: 10px;
+  list-style: none;
+}
+
+.texto li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.texto li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #38bdf8;
+}
+
+/* BOTÃO */
+button {
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  border: none;
+  border-radius: 10px;
+  color: #020617;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  color: #64748b;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container img {
+    width: 200px;
+  }
+}
